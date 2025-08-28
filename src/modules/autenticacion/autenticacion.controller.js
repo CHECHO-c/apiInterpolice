@@ -20,7 +20,6 @@ export async function validarInformacion(req, res) {
 
              res.status(200).send({
                 status: "OK",
-                data: usuario,
                 token: token,
             });
 
