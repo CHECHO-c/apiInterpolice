@@ -22,7 +22,7 @@ export function autenticacionMidleeware(req, res, next) {
         //validar el token
 
         if(!token){
-            throw new Error('Error:token invalido o vacio');
+            throw new Error('No tienes un token valido para acceder a este endpoint');
         }
 
         // comparar el token del request con el token generado en el login
@@ -38,7 +38,7 @@ export function autenticacionMidleeware(req, res, next) {
         res.status(401).send({
 
             status: "Error",
-            message: "No autorizado ! "+ error
+            message: "No estas autorizado "+ error
 
         })
 

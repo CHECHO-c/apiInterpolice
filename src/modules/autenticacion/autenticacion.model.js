@@ -17,7 +17,7 @@ export async function validarInformacionDB(data) {
         {
             return consultaVerificacion;
         }else{
-            throw new Error("la clave ingresada no coincide ! "+ contraseña + " " + contraseñaBD);
+            throw new Error("La contraseña es incorrecta!");
         }
 
     }else{
