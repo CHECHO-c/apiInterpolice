@@ -15,6 +15,7 @@ const router = express.Router();
  router.get("/traerUsuarios", ListarUsuarios);
 router.post("/agregarUsuario", agregarUsuario);
 router.put("/editarUsuario/:idUsuario", editarUsuario);
-router.put("/eliminarUsuario/:idUsuario",eliminarUsuario);
+router.delete("/eliminarUsuario/:idUsuario",eliminarUsuario);
 
+//Eliminar
 export default router;

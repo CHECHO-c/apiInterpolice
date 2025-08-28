@@ -13,6 +13,6 @@ const router = express.Router();
 router.get("/traerRoles", listarRoles);
 router.post("/agregarRol", agregarRol);
 router.put("/editarRol/:idRol", editarRol);
-router.put("/eliminarRol/:idRol", eliminarRol);
+router.delete("/eliminarRol/:idRol", eliminarRol);
 
 export default router;
