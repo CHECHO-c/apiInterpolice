@@ -85,9 +85,9 @@ export async function eliminarCiudadano(req, res) {
     try {
 
         let id = req.params.codigo;
-        let data = req.body;
+        
 
-        const resultado = await eliminarCiudadanoDB(id, data);
+        const resultado = await eliminarCiudadanoDB(id);
 
          res.status(200).send({
             estado: "OK",
