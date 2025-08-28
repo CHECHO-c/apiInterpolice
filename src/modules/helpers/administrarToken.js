@@ -16,9 +16,9 @@ export function autenticacionMidleeware(req, res, next) {
         
         // token valido  desde la peticion  request
 
-        const token = req.headers.authorization;
+        const header = req.headers.authorization;
+        const token = header.starsWith('Bearer ') ? header.slice(7) : null; 
         console.log(token);
-
         //validar el token
 
         if(!token){
