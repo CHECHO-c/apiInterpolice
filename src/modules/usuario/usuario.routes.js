@@ -12,10 +12,10 @@ import { autenticacionMidleeware } from '../helpers/administrarToken.js';
 
 const router = express.Router();
 
- router.get("/traerUsuarios", ListarUsuarios);
-router.post("/agregarUsuario", agregarUsuario);
-router.put("/editarUsuario/:idUsuario", editarUsuario);
-router.delete("/eliminarUsuario/:idUsuario",eliminarUsuario);
+ router.get("/traerUsuarios", autenticacionMidleeware ,ListarUsuarios);
+router.post("/agregarUsuario", autenticacionMidleeware, agregarUsuario);
+router.put("/editarUsuario/:idUsuario", autenticacionMidleeware ,editarUsuario);
+router.delete("/eliminarUsuario/:idUsuario",autenticacionMidleeware,eliminarUsuario);
 
 //Eliminar
 export default router;

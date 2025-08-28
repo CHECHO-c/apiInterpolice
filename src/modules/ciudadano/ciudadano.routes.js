@@ -27,12 +27,13 @@ const almacenamiento = multer.diskStorage({
 
 const subir = multer({ storage:almacenamiento });
 
+import { autenticacionMidleeware } from '../helpers/administrarToken.js';
 const router = express.Router();
 
-router.get("/traerCiudadanos", ListarCiudadanos);
-router.post("/agregarCiudadano", agregarCiudadano);
-router.put("/editarCiudadano/:codigo", editarCiudadano);
-router.delete("/eliminarCiudadano/:codigo", eliminarCiudadano);
+router.get("/traerCiudadanos", autenticacionMidleeware, ListarCiudadanos);
+router.post("/agregarCiudadano", autenticacionMidleeware, agregarCiudadano);
+router.put("/editarCiudadano/:codigo", autenticacionMidleeware, editarCiudadano);
+router.delete("/eliminarCiudadano/:codigo", autenticacionMidleeware, eliminarCiudadano);
 router.put("/subirImagen/:codigo", [subir.single('file0')], subirImagen);
 
 export default router;
