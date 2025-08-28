@@ -10,7 +10,7 @@ export function generarToken(payload, vida) {
     
 }
 
-export function autenticacionMidleeware(req, res, next) {
+export function verificarToken(req, res, next) {
 
     try {
         

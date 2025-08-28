@@ -9,10 +9,10 @@ import {
 
 const router = express.Router();
 
-import { autenticacionMidleeware } from '../helpers/administrarToken.js';
+import { verificarToken } from '../helpers/administrarToken.js';
 
-router.get("/traerRegistroDelitos",autenticacionMidleeware,  listarRegistrosDelitos);
-router.post("/agregarRegistroDelito",autenticacionMidleeware,  agregarRegistroDelito);
-router.put("/editarRegistroDelito/:idRegistroDelito",autenticacionMidleeware,  editarRegistroDelito);
+router.get("/traerRegistroDelitos",verificarToken,  listarRegistrosDelitos);
+router.post("/agregarRegistroDelito",verificarToken,  agregarRegistroDelito);
+router.put("/editarRegistroDelito/:idRegistroDelito",verificarToken,  editarRegistroDelito);
 
 export default router;

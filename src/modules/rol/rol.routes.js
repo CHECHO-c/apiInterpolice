@@ -8,12 +8,12 @@ import {
 
 } from './rol.controller.js';
 
-import { autenticacionMidleeware } from '../helpers/administrarToken.js';
+import { verificarToken } from '../helpers/administrarToken.js';
 const router = express.Router();
 
-router.get("/traerRoles",autenticacionMidleeware,   listarRoles);
-router.post("/agregarRol", autenticacionMidleeware, agregarRol);
-router.put("/editarRol/:idRol", autenticacionMidleeware, editarRol);
-router.delete("/eliminarRol/:idRol",autenticacionMidleeware,  eliminarRol);
+router.get("/traerRoles",verificarToken,   listarRoles);
+router.post("/agregarRol", verificarToken, agregarRol);
+router.put("/editarRol/:idRol", verificarToken, editarRol);
+router.delete("/eliminarRol/:idRol",verificarToken,  eliminarRol);
 
 export default router;

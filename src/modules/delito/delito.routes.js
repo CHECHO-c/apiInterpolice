@@ -8,11 +8,11 @@ import {
 } from './delito.controller.js';
 
 
-import { autenticacionMidleeware } from '../helpers/administrarToken.js';
+import { verificarToken } from '../helpers/administrarToken.js';
 const router = express.Router();
 
-router.get("/traerDelitos",  autenticacionMidleeware, listarDelitos);
-router.post("/agregarDelito", autenticacionMidleeware, agregarDelito);
-router.put("/editarDelito/:idDelito", autenticacionMidleeware, editarDelito);
+router.get("/traerDelitos",  verificarToken, listarDelitos);
+router.post("/agregarDelito", verificarToken, agregarDelito);
+router.put("/editarDelito/:idDelito", verificarToken, editarDelito);
 
 export default router;
