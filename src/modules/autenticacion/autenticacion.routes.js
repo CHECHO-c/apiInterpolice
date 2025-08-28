@@ -7,6 +7,6 @@ import {
 
 const router = express.Router();
 
-router.get("/validarUsuario", validarInformacion);
+router.get("/login", validarInformacion);
 
 export default router;
