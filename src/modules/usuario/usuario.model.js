@@ -44,9 +44,9 @@ export async function editarUsuarioDB(id, data) {
     
 }
 
-export async function eliminarUsuarioDB(id, data) {
+export async function eliminarUsuarioDB(id) {
 
-    let [resultado] = await conexion.query("UPDATE usuario SET ? WHERE idUsuario = ?", [data, id]);
+    let [resultado] = await conexion.query("DELETE FROM usuario WHERE idUsuario = ?", [id]);
     
     return resultado;
 }

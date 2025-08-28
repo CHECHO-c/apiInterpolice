@@ -83,9 +83,9 @@ export async function eliminarUsuario(req, res) {
     try {
 
         let id = req.params.idUsuario;
-        let data = req.body;
+        
 
-        const  resultado = await eliminarUsuarioDB(id, data);
+        const  resultado = await eliminarUsuarioDB(id);
 
         res.status(200).send({
             status: 'OK',
