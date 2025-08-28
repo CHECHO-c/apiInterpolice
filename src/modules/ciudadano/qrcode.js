@@ -29,7 +29,7 @@ export async function GenerarCodigoQR(datosFormulario)
             Estado: ${estado}
         `;
 
-        const qrFolder = path.join(__dirname, '../../../qrcode');
+        const qrFolder = path.join(__dirname, '../../../codigoQr');
 
         const fileName = `qr_${datosFormulario.codigo}.png`;
         const filePath = path.join(qrFolder, fileName);
