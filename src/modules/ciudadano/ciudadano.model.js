@@ -38,7 +38,7 @@ export async function editarCiudadanoDB(id, data) {
 
 export async function eliminarCiudadanoDB(id, data) {
     
-    let [resultado] = await conexion.query("update ciudadano set ? where codigo = ?", [data, id]);
+    let [resultado] = await conexion.query("delete from ciudadano where codigo =?" , [id]);
     return resultado;
 
 }
